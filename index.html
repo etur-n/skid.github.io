@@ -65,3 +65,84 @@
     <p>This is a simple website test made by me!</p>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVD Screensaver Bounce</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars */
+            background-color: black; /* Dark background like a screensaver */
+        }
+
+        #dvd {
+            position: absolute;
+            width: 100px; /* Size of the DVD logo */
+            height: 50px;
+            background-color: white; /* White box */
+            color: black;
+            text-align: center;
+            line-height: 50px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 5px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <img id="dvd" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAYFBMVEVBj97///89jd5fnuIsh9w4i900it0phtxCkN7d6fhUmeHS4vb8/f9NluC0z/CixO3i7fmOuOmCsefK3fV6reaty+/q8vuZv+vW5fdpo+Skxu30+P2Tu+pxqOW/1vKJtenrv4u2AAADOklEQVR4nO3a63aiMBSGYRKToFbqmXqo9v7vsiooB1MB7Uxo8j4/2+laYQ8fbJIdRQAAAAAAAAAAAAAAAAAAAAAAAIBvxq4X0D96o10voW/kQAyk60X0jFmLtXG9iJ5RqUiV60X0ixwLIcaEp8zsTjXZEZ6yOD3VJI1dL6NXztE5hcf1MvrETC81mRKeQjy71GRGeApZdAhPif7Ia/JBf3+lRnlNRrRtV4m4SlwvpS9u0SE8N2pzq8mG8OREwfVSekJ/lmrySXjOStEhPLmhEISnSs8rNZkTnlN03io1eSM89eiIydD1gtyTX9WaiC92IGvREWIZfHikFHUy9BtFLu5qsgi9Jmp5VxPvwyMbqLuSCKGa/sj1Rb1GJtvBQ3NLTeaP/2Sb/PGiREfLRb/m6PqSXqZWk1+tyGTlweNGD0fNV9raaOjH95Da/VpJdh7cJBm13f9KRfZbb0pyev2Y+zaku6X56y+cqtj20u1m7t3JqRmnL1UkHXt4wC7j9xdK8h77lZur51sVL5oSu2dblY0nTYmdmj5Rkqm3N0lGDbq2KvuB5yU5PWp1t1Zlqf18uFapLq3K3PubJGOSWcuKzBIPmxI7qdq1Ku8qhNxctWlVPG5K7HTUlJ+R9LkpsYqbahLgsGzSUJIA5/1Mc0M7DS07jdEJMDzjxpIEF57SSOzPAhuWVW02DQKbNG9+6wQXnlbRCSw8lZHYnwU1LDtsrsdFQPN+lWny3GRt+SoMaNLcEp1Zoiy7KuGExzLXt1Yykmp99/O/PpPUmq5vPu4P2f2gDvX8BDNpXh+JfbvdDTKq/yqU8NTeOh/l61a1zsXZIv+v6jR5OqhuQ5vqAVAgk+aVkdjj3Ta0VOWxQO+HZS9kVDxIJwvbJatF6V9EIdwopWnyUWJ/rZik+GwOYtK8iM7u5420+DYWGER4TH6xjwf2irHAAE4C5Sr//29oUaXM76eV/+HJ3yotzsbzs/aj/+FR53dKu7Px7Kx94n1NLtFpezaenbV7Hx5z7HQ2fj5rP/r+lNViE3X51tXRRnj+bSwPD5oSu3h38Dw8T0x16oB2ZQEAAAAAAAAAAAAAAAAAAAAAAAAAAIB/6htfPxvH+pj54QAAAABJRU5ErkJggg==" alt="DVD">
+
+    <script>
+        const dvd = document.getElementById('dvd');
+        let x = Math.random() * (window.innerWidth - dvd.offsetWidth); // Random start x
+        let y = Math.random() * (window.innerHeight - dvd.offsetHeight); // Random start y
+        let vx = 2; // Velocity x (speed and direction)
+        let vy = 2; // Velocity y
+        let colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange']; // Color cycle
+
+        function animate() {
+            // Update position
+            x += vx;
+            y += vy;
+
+            // Bounce off edges
+            if (x + dvd.offsetWidth >= window.innerWidth || x <= 0) {
+                vx = -vx; // Reverse x direction
+                changeColor(); // Change color on bounce
+            }
+            if (y + dvd.offsetHeight >= window.innerHeight || y <= 0) {
+                vy = -vy; // Reverse y direction
+                changeColor(); // Change color on bounce
+            }
+
+            // Apply position
+            dvd.style.left = `${x}px`;
+            dvd.style.top = `${y}px`;
+
+            requestAnimationFrame(animate);
+        }
+
+        function changeColor() {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            dvd.style.backgroundColor = randomColor;
+            dvd.style.color = randomColor === 'yellow' ? 'black' : 'white'; // Better contrast
+        }
+
+        // Initial color
+        changeColor();
+
+        // Start animation
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (x + dvd.offsetWidth > window.innerWidth) x = window.innerWidth - dvd.offsetWidth;
+            if (y + dvd.offsetHeight > window.innerHeight) y = window.innerHeight - dvd.offsetHeight;
+        });
+    </script>
+</body>
+</html>
