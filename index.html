@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Index Page</title>
+    <style>
+        /* Responsive Image Styles */
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Hover Effect Styles */
+        .image-container {
+            width: 300px; /* Adjust as needed */
+            overflow: hidden;
+            margin: 20px auto; /* Center container */
+        }
+
+        .hover-image {
+            width: 100%;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hover-image:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        /* Text Color Styles */
+        body {
+            color: #333333; /* Default text color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .red-text {
+            color: red;
+        }
+
+        .blue-heading {
+            color: blue;
+        }
+
+        /* Optional: Media query for responsiveness */
+        @media (min-width: 768px) {
+            .responsive-image {
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="blue-heading">Welcome to My Test GitHub Pages Site</h1>
+    <p>This is some default text. Resize your browser to test responsiveness.</p>
+    <p class="red-text">This paragraph is red for testing text colors.</p>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/300x200" alt="Test Image" class="hover-image responsive-image">
+    </div>
+
+    <p>Hover over the image above to see the hover effect (scale and opacity change). It should also be responsive on different screen sizes.</p>
+</body>
+</html>
