@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伟大的复兴</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      background: linear-gradient(to bottom, #c8102e 0%, #a50d27 100%);
+      color: #ffde00;
+      font-family: "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      min-height: 100vh;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      top: 20px;
+      left: 30px;
+      width: 180px;
+      height: 180px;
+      z-index: 5;
+      opacity: 0.92;
+    }
+
+    .big-star {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 60px solid #ffde00;
+      transform: rotate(180deg);
+    }
+
+    .small-star {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 24px solid #ffde00;
+    }
+
+    header {
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(4px);
+      padding: 1.2rem 5%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      border-bottom: 2px solid rgba(255,222,0,0.25);
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2.1rem;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-shadow: 0 0 12px rgba(255,222,0,0.7);
+    }
+
+    .nav-links a {
+      color: #ffde00;
+      text-decoration: none;
+      margin-left: 2.8rem;
+      font-size: 1.15rem;
+      transition: all 0.2s;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+
+    .nav-links a:hover {
+      color: white;
+      text-shadow: 0 0 16px #ffde00;
+    }
+
+    main {
+      padding-top: 160px;
+      padding-bottom: 80px;
+      text-align: center;
+      color: #fff9e6;
+    }
+
+    h1 {
+      font-size: 4.8rem;
+      margin-bottom: 0.6rem;
+      text-shadow: 4px 4px 12px rgba(0,0,0,0.75);
+      letter-spacing: 6px;
+    }
+
+    .subtitle {
+      font-size: 2.1rem;
+      margin-bottom: 3.5rem;
+      opacity: 0.92;
+      text-shadow: 2px 2px 8px black;
+    }
+
+    .slogan {
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin: 3rem 0 4rem;
+      color: #ffde00;
+      text-shadow: 0 0 20px rgba(255,222,0,0.6), 0 0 40px rgba(255,222,0,0.3);
+      animation: pulse 6s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 0.92; transform: scale(1); }
+      50%     { opacity: 1;   transform: scale(1.04); }
+    }
+
+    .content-box {
+      max-width: 960px;
+      margin: 0 auto 3rem;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(5px);
+      padding: 2.8rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,222,0,0.18);
+      text-align: justify;
+      line-height: 1.8;
+      font-size: 1.18rem;
+    }
+
+    footer {
+      background: #8b0000;
+      color: #ffde00;
+      text-align: center;
+      padding: 2.5rem;
+      border-top: 3px solid #ffde00;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Big flag star in top-left corner -->
+  <div class="stars">
+    <div class="big-star" style="left:50%; top:30%; transform:translate(-50%,-50%) rotate(36deg);"></div>
+    <div class="small-star" style="left:20%; top:10%; transform:rotate(18deg);"></div>
+    <div class="small-star" style="left:75%; top:15%; transform:rotate(-45deg);"></div>
+    <div class="small-star" style="left:35%; top:65%; transform:rotate(72deg);"></div>
+    <div class="small-star" style="left:68%; top:70%; transform:rotate(0deg);"></div>
+  </div>
+
+  <header>
+    <nav>
+      <div class="logo">中国共产党</div>
+      <div class="nav-links">
+        <a href="#home">首页</a>
+        <a href="#theory">思想</a>
+        <a href="#history">历史</a>
+        <a href="#future">复兴</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>中华民族伟大复兴</h1>
+    <div class="subtitle">中国共产党领导是中国特色社会主义最本质的特征</div>
+
+    <div class="slogan">为人民服务 ∙ 实事求是 ∙ 艰苦奋斗 ∙ 团结奋斗</div>
+
+    <div class="content-box">
+      <p>
+        中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。
+      </p>
+      <p style="margin-top:2rem;">
+        以习近平同志为核心的党中央团结带领全党全国各族人民，统筹推进“五位一体”总体布局，协调推进“四个全面”战略布局，全面建成小康社会胜利在望，全面建设社会主义现代化国家新征程已经开启。
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>没有共产党就没有新中国　｜　长风破浪会有时，直挂云帆济沧海</p>
+    <p style="margin-top:1rem; opacity:0.8; font-size:0.95rem;">
+      1949—2026　为共产主义奋斗终身，随时准备为党和人民牺牲一切
+    </p>
+  </footer>
+
+</body>
+</html>
